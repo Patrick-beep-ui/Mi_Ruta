@@ -25,9 +25,14 @@ Run lint and typecheck before declaring any task done.
 
 ## Navigation & Routing
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+- Use explicit **React Navigation** navigators, as requested for Mi Ruta. Do not migrate to Expo Router.
+- See `docs/architecture.md` for the implemented hierarchy and the architectural playbook.
+- `src/navigators/` owns navigation composition; `stack_navigators/` contains section stacks.
+- `src/screens/` composes layouts and content. Navigators must not contain SQL, HTTP calls, or screen content.
+- `src/layout/ScreenLayout.tsx` owns the visible heading. Navigator headers remain hidden to avoid duplicates.
+- `src/context/DatabaseProvider.tsx` owns the SQLite connection. Consume it using `src/hooks/useConnection.ts`.
+- Authentication and remote services are pending product decisions. Do not add a fake login or invent a backend.
+- Use pnpm (`pnpm exec expo install <package> --pnpm`, `pnpm start`, `pnpm lint`, `pnpm typecheck`). Keep `pnpm-lock.yaml` committed.
 
 ## Building with EAS
 
