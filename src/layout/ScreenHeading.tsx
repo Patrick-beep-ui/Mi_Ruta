@@ -1,22 +1,14 @@
-import { Pressable, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { ArrowLeft, Menu } from 'lucide-react-native';
 import { headingStyles as styles } from './HeadingStyles';
-
-type Props = { title: string; onBack?: () => void; onMenu?: () => void };
-
-export function ScreenHeading({ title, onBack, onMenu }: Props) {
-  return (
-    <View style={styles.container}>
-      {onBack || onMenu ? (
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={onBack ? 'Volver' : 'Abrir menú'}
-          onPress={onBack ?? onMenu}
-          style={styles.action}
-        >
-          <Text style={styles.actionText}>{onBack ? 'Volver' : 'Menú'}</Text>
-        </Pressable>
-      ) : null}
-      <Text accessibilityRole="header" style={styles.title}>{title}</Text>
-    </View>
-  );
+import { AppText } from '../components/ui/AppText';
+import { IconButton } from '../components/ui/IconButton';
+import { colors } from '../theme/tokens';
+type Props = { title: string; onBack?: () => void; onMenu?: () => void; inverse?: boolean };
+export function ScreenHeading({ title, onBack, onMenu, inverse }: Props) {
+  return <View style={styles.container}>
+    {onBack ? <IconButton icon={ArrowLeft} label="Volver" onPress={onBack} inverse={inverse} /> :
+      onMenu ? <IconButton icon={Menu} label="Abrir menú" onPress={onMenu} inverse={inverse} /> : null}
+    <AppText accessibilityRole="header" variant="section" color={inverse ? colors.onBrand : colors.primary} style={styles.title}>{title}</AppText>
+  </View>;
 }
