@@ -1,6 +1,6 @@
 # Guía de arquitectura React Native: layouts, navegadores y componentes
 
-Referencia de trabajo para Patrick Solis y Omar — Mi Ruta.
+Referencia de trabajo para Patrick Solis, Omar Quintanilla y Luis Saravia — Mi Ruta.
 
 Fecha: 19 de noviembre de 2026.
 

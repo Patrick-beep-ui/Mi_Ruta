@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Map } from 'lucide-react-native';
+import { Search, Map } from 'lucide-react-native';
 import { HomeStack } from './stack_navigators/HomeStack';
 import { ExploreStack } from './stack_navigators/ExploreStack';
 import type { BottomTabParamList } from './types';
@@ -12,10 +12,10 @@ export function BottomTabNavigator() {
     headerShown: false, tabBarActiveTintColor: colors.tabActive, tabBarInactiveTintColor: colors.tabInactive,
     tabBarStyle: { backgroundColor: colors.surface, borderTopColor: colors.border, borderTopLeftRadius: radii.panel, borderTopRightRadius: radii.panel },
     tabBarItemStyle: { paddingVertical: spacing.xs },
-    tabBarIcon: ({ color, size }) => <AppIcon icon={route.name === 'HomeTab' ? Home : Map} color={color} size={size} />,
+    tabBarIcon: ({ color, size }) => <AppIcon icon={route.name === 'HomeTab' ? Search : Map} color={color} size={size} />,
     tabBarLabel: ({ color, children }) => <AppText variant="caption" color={color}>{children}</AppText>,
   })}>
-    <Tab.Screen name="HomeTab" component={HomeStack} options={{ title: 'Inicio' }} />
-    <Tab.Screen name="ExploreTab" component={ExploreStack} options={{ title: 'Explorar' }} />
+    <Tab.Screen name="HomeTab" component={HomeStack} options={{ title: 'Buscador' }} />
+    <Tab.Screen name="ExploreTab" component={ExploreStack} options={{ title: 'Rutas' }} />
   </Tab.Navigator>;
 }
