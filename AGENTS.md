@@ -44,3 +44,10 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## Design system
+
+- Read `docs/design-system.md` before changing UI. Tokens live in `src/theme/tokens.ts`.
+- Reuse AppText, Button, Card, TextField, Badge, BrandLogo and ScreenLayout. Avoid screen-local copies of colors, font families or spacing.
+- Use typed Lucide icons via AppIcon. Keep layout/navigation files free of business logic.
+- Keep speculative screens/data clearly marked as previews. Do not connect demo controls to services, SQLite, authentication or simulated business actions.

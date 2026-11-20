@@ -81,3 +81,7 @@ La exportación de bundles y TypeScript no sustituyen estas pruebas de interacci
 - [Guía de arquitectura completa](React_Native_Architecture_Playbook.md).
 - [React Navigation: nesting navigators](https://reactnavigation.org/docs/nesting-navigators/).
 - [Expo SQLite SDK 58](https://docs.expo.dev/versions/v58.0.0/sdk/sqlite/).
+
+## Design system
+
+DesignSystemProvider monta Inter antes de DatabaseProvider. AppNavigation mantiene el único NavigationContainer con colores/fuentes de marca. Los layouts y navegadores consumen tokens; ver [sistema de diseño](design-system.md).

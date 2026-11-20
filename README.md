@@ -32,3 +32,7 @@ El objetivo de esta base es Android/iOS. Web/SQLite requiere configuración adic
 La navegación explícita usa Drawer → Bottom Tabs → Stacks. Los navegadores importan pantallas; las pantallas componen layouts y componentes. ScreenLayout controla los encabezados. DatabaseProvider administra la conexión SQLite sin top-level await ni conexiones por pantalla.
 
 Las vistas incluidas son provisionales. No hay autenticación, datos de transporte ni sincronización remota implementados.
+
+## Sistema visual
+
+[Tokens, tipografía, assets y componentes compartidos](docs/design-system.md). El sistema usa Inter local, azul #013089 y amarillo #FEC108 según la edición 02 de la guía visual.

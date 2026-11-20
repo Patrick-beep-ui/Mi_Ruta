@@ -1,21 +1,14 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { DatabaseProvider } from './src/context/DatabaseProvider';
-import { RootNavigator } from './src/navigators/RootNavigator';
-
+import { AppNavigation } from './src/navigators/AppNavigation';
+import { DesignSystemProvider } from './src/theme/DesignSystemProvider';
 export default function App() {
-  return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider>
-        <DatabaseProvider>
-          <NavigationContainer>
-            <RootNavigator />
-          </NavigationContainer>
-          <StatusBar style="dark" />
-        </DatabaseProvider>
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
-  );
+  return <GestureHandlerRootView style={{ flex: 1 }}>
+    <SafeAreaProvider>
+      <DesignSystemProvider>
+        <DatabaseProvider><AppNavigation /></DatabaseProvider>
+      </DesignSystemProvider>
+    </SafeAreaProvider>
+  </GestureHandlerRootView>;
 }
