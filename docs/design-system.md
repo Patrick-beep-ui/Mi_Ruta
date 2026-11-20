@@ -34,3 +34,11 @@ The font provider wraps DatabaseProvider so loading/error screens share typograp
 PR 1 applies foundations to the existing screens. New illustrative screens are isolated in a subsequent PR. No authentication, queries, route search, map provider, favorites persistence or domain schema is added.
 
 Run `pnpm typecheck`, `pnpm lint`, `pnpm exec expo install --check`, `pnpm peers check`, `pnpm dlx expo-doctor`, and mobile bundle exports. In a native client, inspect font load/fallback, long labels at increased text size, Drawer/Tabs/Back, safe areas and contrast. Bundle export does not establish native interaction correctness.
+
+## Static screen previews (dependent PR)
+
+HomeScreen and ExploreScreen now compose the shared system into a search preview and sample route catalog. Only the existing tab labels/icons change to Buscador and Rutas; route keys and stack/drawer hierarchy stay unchanged.
+
+All illustrative content lives in `components/previews/`, including explicitly non-authoritative `routeExamples`. Fields are read-only, search/clear controls are disabled, and route cards are not pressable. Visible PreviewNotice and per-card labels distinguish these fixtures from real transit data. There are no fake alerts, loading timers, search/filter implementations, detail routes, map tiles, favorite state, DB writes or HTTP calls. About, Drawer and Back retain their existing real navigation actions.
+
+Native manual check: scroll both screens at 320-unit width and increased text size; confirm disabled actions do nothing, fields do not open a keyboard, labels wrap, all cards can be reached, menus and About/Back still work, and status bar changes correctly when opening light-background screens.
