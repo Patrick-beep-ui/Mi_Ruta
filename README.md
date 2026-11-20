@@ -1,6 +1,6 @@
 # Mi Ruta
 
-Recreación de Mi Ruta por Patrick Solis y Omar Quintanilla. Base móvil con React Native, Expo SDK 58, TypeScript, pnpm y SQLite local. Backend, dominio y autenticación se definirán durante el desarrollo.
+Recreación de Mi Ruta. Base móvil con React Native, Expo SDK 58, TypeScript, pnpm y SQLite local. Backend, dominio y autenticación se definirán durante el desarrollo.
 
 ## Desarrollo
 
