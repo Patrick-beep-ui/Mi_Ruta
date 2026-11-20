@@ -36,3 +36,5 @@ Las vistas incluidas son provisionales. No hay autenticación, datos de transpor
 ## Sistema visual
 
 [Tokens, tipografía, assets y componentes compartidos](docs/design-system.md). El sistema usa Inter local, azul #013089 y amarillo #FEC108 según la edición 02 de la guía visual.
+
+Las vistas Buscador y Rutas muestran ejemplos estáticos del sistema visual. Los campos son de solo lectura y las futuras acciones están deshabilitadas. No hay funcionalidades de transporte implementadas.
